@@ -12,7 +12,6 @@ cd %userprofile%
 git clone https://github.com/dariuszpaluch/atom-configuration
 rmdir .atom
 mkdir .atom
-mklink /D %userprofile%\.atom\blob-store %userprofile%\atom-configuration\.atom\blob-store
 mklink /D %userprofile%\.atom\packages %userprofile%\atom-configuration\.atom\packages
 mklink %userprofile%\.atom\init.coffee %userprofile%\atom-configuration\.atom\init.coffee
 mklink %userprofile%\.atom\styles.less %userprofile%\atom-configuration\.atom\styles.less
