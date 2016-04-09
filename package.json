@@ -1,0 +1,20 @@
+{
+  "name": "atom-configuration",
+  "version": "1.0.0",
+  "description": "This is package to configuration atom editor. Contains all settings, plugins and themes to work with web application.",
+  "main": "index.js",
+  "scripts": {
+    "install-plugins": "npm run jslint",
+    "jslint": "npm install -g eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dariuszpaluch/atom-configuration.git"
+  },
+  "author": "Dariusz Paluch",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dariuszpaluch/atom-configuration/issues"
+  },
+  "homepage": "https://github.com/dariuszpaluch/atom-configuration#readme"
+}
