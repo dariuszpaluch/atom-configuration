@@ -2,6 +2,9 @@
   core: {}
   editor:
     invisibles: {}
+    showInvisibles: true
+    softWrap: true
+    tabType: "soft"
   "exception-reporting":
     userId: "9be056dc-a56a-2771-0610-05ba53973675"
   welcome:
