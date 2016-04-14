@@ -4,6 +4,18 @@ All notable changes to the project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 
+[1.7.2] - 2016-04-14
+--------------------
+### Added
+- **New icons:** Doxygen
+- **Support:** `.ad`, `.am`, `Brewfile`, `.desktop`, `.directory`, `.ebuild`, `.github`, `.install`, `.m4`, `.menu`, `.msi`, `_osc`, `PKGBUILD`, `.sed`, `_service`, `.spacemacs`
+- Support for numerous GNU Automake/Autoconf files
+
+### Fixed
+- [[`#193`](https://github.com/DanBrooker/file-icons/issues/193)] Tab icons now update when changing file extensions
+- [[`#316`](https://github.com/DanBrooker/file-icons/issues/316)] Newly-saved files now display icons in tab
+
+
 [1.7.1] - 2016-04-05
 --------------------
 ### Added
@@ -623,7 +635,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 Initial release.
 
 
-[Unreleased]: https://github.com/DanBrooker/file-icons/compare/v1.7.1...HEAD
+[Unreleased]: https://github.com/DanBrooker/file-icons/compare/v1.7.2...HEAD
+[1.7.2]:  https://github.com/DanBrooker/file-icons/compare/v1.7.1...v1.7.2
 [1.7.1]:  https://github.com/DanBrooker/file-icons/compare/v1.7.0...v1.7.1
 [1.7.0]:  https://github.com/DanBrooker/file-icons/compare/v1.6.21...v1.7.0
 [1.6.21]: https://github.com/DanBrooker/file-icons/compare/v1.6.20...v1.6.21

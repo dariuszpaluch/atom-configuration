@@ -5,7 +5,8 @@
 @import "ui-variables";
 
 
-// Defaults
+/*==[ DEFAULTS ]==============================================================*/
+
 .icon-file-text,
 .icon-file-directory,
 .icon-file-media,
@@ -13,29 +14,39 @@
   &:before { text-align: center; }
 }
 
-
-// Git
-.icon-file-directory[data-name=".git"]:before     { .git-icon; }
-
-// Package
-.icon-file-directory[data-name=".bundle"]:before  { .package-icon; }
-
-// Meteor
-.icon-file-directory[data-name=".meteor"]:before  { .meteor-icon; }
-
-// Default: Image
+// Images
 .icon-file-media[data-name$=".png"]:before { .medium-orange; }
 .icon-file-media[data-name$=".gif"]:before { .medium-yellow; }
 .icon-file-media[data-name$=".jpg"]:before { .medium-green;  }
 
-// Default: Book
+// Book
 .icon-book[data-name="README.md"]:before,
 .icon-book[data-name="Readme.md"]:before,
 .icon-book[data-name="readme.md"]:before { .medium-blue; }
 
 
 
-// File icons
+/*==[ DIRECTORY ICONS ]=======================================================*/
+
+.icon-file-directory {
+  
+  // Git
+  &[data-name=".git"]:before     { .git-icon; }
+  
+  // GitHub
+  &[data-name=".github"]:before  { .github-icon; }
+
+  // Package
+  &[data-name=".bundle"]:before  { .package-icon; }
+  
+  // Meteor
+  &[data-name=".meteor"]:before  { .meteor-icon; }
+}
+
+
+
+/*==[ FILE ICONS ]============================================================*/
+
 .file-icons-tab-pane-icon @{pane-tab-selector},
 .icon-file-text,
 .icon-file-binary,
@@ -51,7 +62,7 @@
   &[data-name$=".ada"]:before,
   &[data-name$=".adb"]:before,
   &[data-name$=".ads"]:before            { .ada-icon;            .medium-blue; }
-  
+
   // Adobe
   &[data-name$=".ai"]:before             { .ai-icon;           .medium-orange; }
   &[data-name$=".ait"]:before            { .ai-icon;             .dark-orange; }
@@ -60,12 +71,13 @@
   // APL / Dyalog APL
   &[data-name$=".apl"]:before            { .apl-icon;               .dark-red; }
   &[data-name$=".dyalog"]:before         { .dyalog-icon;       .medium-orange; }
-  
+
   // AppleScript
   &[data-name$=".applescript"]:before,
   &[data-name$=".scpt"]:before           { .apple-icon;        .medium-purple; }
 
   // AsciiDoc
+  &[data-name$=".ad"]:before,
   &[data-name$=".adoc"]:before,
   &[data-name$=".asc"]:before,
   &[data-name$=".asciidoc"]:before       { .asciidoc-icon;       .medium-blue; }
@@ -76,13 +88,16 @@
   &[data-name$=".s"]:before,
   &[data-name$=".asm"]:before            { .binary-icon;          .medium-red; }
   &[data-name$=".ko"]:before             { .binary-icon;          .dark-green; }
-  
+
   // Babel
   &[data-name$=".babelrc"]:before        { .babel-icon;        .medium-yellow; }
   &[data-name$=".babelignore"]:before    { .babel-icon;          .dark-yellow; }
 
   // Boot
   &[data-name$="build.boot"]:before      { .boot-icon; }
+  
+  // Brewfile
+  &[data-name="Brewfile"]:before         { .brew-icon;         .medium-orange; }
 
   // Cakefile
   &[data-name="Cakefile"]:before         { .cake-icon;            .medium-red; }
@@ -102,6 +117,8 @@
 
   // Config files
   &[data-name$=".ini"]:before            { .config-icon;       .medium-yellow; }
+  &[data-name$=".desktop"]:before        { .config-icon;       .medium-yellow; }
+  &[data-name$=".directory"]:before      { .config-icon;       .medium-yellow; }
   &[data-name$=".properties"]:before     { .config-icon;       .medium-purple; }
   &[data-name$=".toml"]:before           { .config-icon;        .medium-green; }
 
@@ -141,6 +158,9 @@
   // Dockerfile
   &[data-name^="Dockerfile"]:before      { .docker-icon;           .dark-blue; }
   &[data-name$=".dockerignore"]:before   { .docker-icon;           .dark-blue; }
+  
+  // Doxyfile
+  &[data-name="Doxyfile"]:before         { .doxygen-icon;        .medium-blue; }
 
   // Elixir
   &[data-name$=".ex"]:before             { .elixir-icon;         .dark-purple; }
@@ -153,12 +173,12 @@
 
   // Elm
   &[data-name$=".elm"]:before            { .elm-icon;            .medium-blue; }
-  
+
   // Emacs Lisp
   &[data-name$=".emacs"]:before,
+  &[data-name$=".spacemacs"]:before,
   &[data-name$=".emacs.desktop"]:before,
   &[data-name$=".el"]:before             { .emacs-icon;        .medium-purple; }
-  
 
   // Emblem
   &[data-name$=".emblem"]:before,
@@ -180,7 +200,7 @@
   &[data-name$=".fs"]:before             { .fsharp-icon;         .medium-blue; }
   &[data-name$=".fsx"]:before            { .fsharp-icon;         .medium-blue; }
   &[data-name$=".fsi"]:before            { .fsharp-icon;         .medium-blue; }
-  
+
   // Flow
   &[data-name$=".flowconfig"]:before     { .flow-icon;         .medium-orange; }
 
@@ -230,12 +250,17 @@
 
   // Generic format: Code
   &[data-name$=".xml"]:before            { .code-icon;           .medium-blue; }
+  &[data-name="_service"]                { .code-icon;           .medium-blue; }
+  &[data-name$=".menu"]:before           { .code-icon;           .medium-blue; }
   &[data-name$=".config"]:before         { .code-icon;           .medium-blue; }
   &[data-name$=".manifest"]:before       { .code-icon;           .medium-blue; }
   &[data-name$=".jl"]:before             { .code-icon;         .medium-purple; }
   &[data-name$=".cfc"]:before            { .code-icon;            .light-cyan; }
   &[data-name$=".cfm"]:before            { .code-icon;           .medium-cyan; }
   &[data-name$=".cfml"]:before           { .code-icon;           .medium-cyan; }
+  &[data-name$=".m4"]:before             { .code-icon;            .medium-red; }
+  &[data-name$=".sed"]:before            { .code-icon;            .dark-green; }
+  &[data-name="configure.ac"]:before     { .code-icon;            .medium-red; }
 
   // Generic format: Fonts
   &[data-name$=".eot"]:before            { .font-icon;           .light-green; }
@@ -366,6 +391,7 @@
   &[data-name="mkfile"]:before           { .checklist-icon;    .medium-yellow; }
   &[data-name$=".mk"]:before             { .checklist-icon;    .medium-yellow; }
   &[data-name$=".mak"]:before            { .checklist-icon;    .medium-yellow; }
+  &[data-name$=".am"]:before             { .checklist-icon;       .medium-red; }
 
   // Markdown (except readme.md)
   &[data-name$=".mdown"]:before,
@@ -418,6 +444,7 @@
   &[data-name$=".swift"]:before          { .swift-icon;         .medium-green; }
   &[data-name$=".cs"]:before             { .csharp-icon;          .auto(blue); }
   &[data-name$=".vb"]:before             { .code-icon;           .medium-blue; }
+  &[data-name="config.h.in"]:before      { .c-icon;               .medium-red; }
 
   // OCaml
   &[data-name$=".ml"]:before             { .ocaml-icon;        .medium-orange; }
@@ -459,7 +486,7 @@
   &[data-name$=".psd1"]:before           { .terminal-icon;       .medium-blue; }
   &[data-name$=".psm1"]:before           { .terminal-icon;       .medium-blue; }
   &[data-name$=".ps1xml"]:before         { .terminal-icon;       .medium-blue; }
-  
+
   // Pug/Jade
   &[data-name$=".pug"]:before,
   &[data-name$=".jade"]:before           { .jade-icon;            .medium-red; }
@@ -537,6 +564,11 @@
   // Shell
   &[data-name$=".sh"]:before,
   &[data-name$=".bash"]:before,
+  &[data-name$=".ebuild"]:before,
+  &[data-name$=".install"]:before,
+  &[data-name="install-sh"]:before,
+  &[data-name="_osc"],
+  &[data-name="PKGBUILD"],
   &[data-name="bashrc"]:before,
   &[data-name=".bashrc"]:before,
   &[data-name="bash_login"]:before,
@@ -547,7 +579,15 @@
   &[data-name=".zshrc"]:before           { .terminal-icon;       .medium-blue; }
   &[data-name$=".fish"]:before,
   &[data-name=".fishrc"]:before          { .terminal-icon;      .medium-green; }
-  
+  &[data-name="configure"]:before,
+  &[data-name="config.guess"]:before,
+  &[data-name="config.rpath"]:before,
+  &[data-name="config.status"]:before,
+  &[data-name="config.sub"]:before,
+  &[data-name="depcomp"]:before,
+  &[data-name="libtool"]:before,
+  &[data-name="compile"]:before          { .terminal-icon;        .medium-red; }
+
   // Sketch
   &[data-name$=".sketch"]:before         { .sketch-icon;       .medium-orange; }
 
@@ -599,7 +639,7 @@
 
   // Vue
   &[data-name$=".vue"]:before            { .vue-icon;            .light-green; }
-  
+
   // Webpack
   &[data-name*="webpack.config."]:before { .webpack-icon;        .medium-blue; }
 
@@ -608,12 +648,13 @@
   &[data-name$=".cmd"]:before            { .windows-icon;      .medium-purple; }
   &[data-name$=".exe"]:before            { .windows-icon;                      }
   &[data-name$=".com"]:before            { .windows-icon;                      }
+  &[data-name$=".msi"]:before            { .windows-icon;                      }
   &[data-name$=".reg"]:before            { .windows-icon;        .medium-blue; }
 
   // XAML
   &[data-name$=".xaml"]:before           { .code-icon;           .medium-blue; }
-  
-  
+
+
   /*============================================================================
        THESE RULES MUST BE LISTED LAST TO AVOID BEING OVERRIDDEN BY OTHERS
   ============================================================================*/
@@ -621,30 +662,30 @@
   &[data-name="apache.conf"]:before      { .apache-icon;          .medium-red; }
   &[data-name="apache2.conf"]:before     { .apache-icon;          .medium-red; }
   &[data-name="httpd.conf"]:before       { .apache-icon;          .medium-red; }
-  
+
   // Appveyor
   &[data-name="appveyor.yml"]:before     { .appveyor-icon;       .medium-blue; }
-  
+
   // Bower
   &[data-name=".bowerrc"]:before         { .bower-icon;                        }
   &[data-name="bower.json"]:before       { .bower-icon;          .auto(bower); }
-  
+
   // Broccoli
   &[data-name^="Brocfile."]:before,
   &[data-name^="brocfile."]:before        { .broccoli-icon;     .medium-green; }
-  
+
   // Cargo
   &[data-name$="Cargo.toml"]:before      { .package-icon;       .light-orange; }
   &[data-name$="Cargo.lock"]:before      { .package-icon;        .dark-orange; }
-  
+
   // Composer
   &[data-name="composer.json"]:before    { .composer-icon;     .medium-yellow; }
-  
+
   // ERB combinations
   &[data-name$=".js.erb"]:before         { .js-icon;              .medium-red; }
   &[data-name$=".coffee.erb"]:before     { .coffee-icon;          .medium-red; }
   &[data-name$=".html.erb"]:before       { .html5-icon;           .medium-red; }
-  
+
   // Grunt
   &[data-name$="GRUNTFILE.js"]:before,
   &[data-name$="Gruntfile.js"]:before,
