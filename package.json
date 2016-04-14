@@ -4,8 +4,9 @@
   "description": "This is package to configuration atom editor. Contains all settings, plugins and themes to work with web application.",
   "main": "index.js",
   "scripts": {
-    "install-plugins": "npm run jslint",
+    "install-plugins": "npm run jslint && npm run sass-lint",
     "jslint": "npm install -g eslint"
+	"sass-lint": "npm install -g sass-lint"
   },
   "repository": {
     "type": "git",

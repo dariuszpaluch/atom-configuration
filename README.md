@@ -19,3 +19,9 @@ mklink %userprofile%\.atom\config.cson %userprofile%\atom-configuration\.atom\co
 mklink %userprofile%\.atom\keymap.cson %userprofile%\atom-configuration\.atom\keymap.cson
 mklink %userprofile%\.atom\snippets.cson %userprofile%\atom-configuration\.atom\snippets.cson
 ```
+
+To use **sass-lint** and **eslint** in Atom, you need to install eslint and sass-lint globally by npm.
+Open command line in repository folder and type:
+```sh
+npm run install-plugins
+```
