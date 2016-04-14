@@ -6,7 +6,15 @@
 This is package to configuration **atom editor**. Contains all settings, plugins and themes to work with web application.
 
 ## Instalation in Windows
+
 Open command line as **administrator** and type:
+```sh
+git config --global --add core.longpaths true
+```
+This instruction remove long path issue on microsoft window platform.
+
+Then type:
+
 ```sh
 cd %userprofile%
 git clone https://github.com/dariuszpaluch/atom-configuration
