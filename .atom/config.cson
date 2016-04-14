@@ -31,8 +31,10 @@
     tabType: "soft"
   "exception-reporting":
     userId: "9be056dc-a56a-2771-0610-05ba53973675"
+  fonts:
+    fontFamily: "Droid Sans Mono"
   linter:
-    errorPanelHeight: 27
+    errorPanelHeight: 60
   "linter-sass-lint":
     globalNodePath: "C:\\Program Files\\nodejs"
     globalSassLint: true
