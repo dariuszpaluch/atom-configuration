@@ -36,19 +36,24 @@ function isConstructorFunction(node) {
 //------------------------------------------------------------------------------
 
 module.exports = function(context) {
-    // Information for each constructor.
-    // - upper:      Information of the upper constructor.
-    // - hasExtends: A flag which shows whether the owner class has a valid
-    //               `extends` part.
-    // - scope:      The scope of the owner class.
-    // - codePath:   The code path of this constructor.
+
+    /*
+     * Information for each constructor.
+     * - upper:      Information of the upper constructor.
+     * - hasExtends: A flag which shows whether the owner class has a valid
+     *   `extends` part.
+     * - scope:      The scope of the owner class.
+     * - codePath:   The code path of this constructor.
+     */
     var funcInfo = null;
 
-    // Information for each code path segment.
-    // Each key are the ids of code path segments.
-    // Each value are an object:
-    // - superCalled:  The flag which shows `super()` called in all code paths.
-    // - invalidNodes: The array of invalid ThisExpression and Super nodes.
+    /*
+     * Information for each code path segment.
+     * Each key is the id of a code path segment.
+     * Each value is an object:
+     * - superCalled:  The flag which shows `super()` called in all code paths.
+     * - invalidNodes: The array of invalid ThisExpression and Super nodes.
+     */
     var segInfoMap = Object.create(null);
 
     /**
@@ -87,6 +92,7 @@ module.exports = function(context) {
      */
     function setInvalid(node) {
         var segments = funcInfo.codePath.currentSegments;
+
         for (var i = 0; i < segments.length; ++i) {
             segInfoMap[segments[i].id].invalidNodes.push(node);
         }
@@ -98,12 +104,14 @@ module.exports = function(context) {
      */
     function setSuperCalled() {
         var segments = funcInfo.codePath.currentSegments;
+
         for (var i = 0; i < segments.length; ++i) {
             segInfoMap[segments[i].id].superCalled = true;
         }
     }
 
     return {
+
         /**
          * Adds information of a constructor into the stack.
          * @param {CodePath} codePath - A code path which was started.
@@ -112,8 +120,10 @@ module.exports = function(context) {
          */
         "onCodePathStart": function(codePath, node) {
             if (isConstructorFunction(node)) {
+
                 // Class > ClassBody > MethodDefinition > FunctionExpression
                 var classNode = node.parent.parent.parent;
+
                 funcInfo = {
                     upper: funcInfo,
                     isConstructor: true,
@@ -145,6 +155,7 @@ module.exports = function(context) {
          */
         "onCodePathEnd": function(codePath) {
             var isDerivedClass = funcInfo.hasExtends;
+
             funcInfo = funcInfo.upper;
             if (!isDerivedClass) {
                 return;
@@ -210,6 +221,7 @@ module.exports = function(context) {
                 {first: toSegment, last: fromSegment},
                 function(segment, controller) {
                     var info = segInfoMap[segment.id];
+
                     if (info.superCalled) {
                         info.invalidNodes = [];
                         controller.skip();

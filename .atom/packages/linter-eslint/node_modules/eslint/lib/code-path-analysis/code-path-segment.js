@@ -79,6 +79,7 @@ function isReachable(segment) {
  * @param {boolean} reachable - A flag which shows this is reachable.
  */
 function CodePathSegment(id, allPrevSegments, reachable) {
+
     /**
      * The identifier of this code path.
      * Rules use it to store additional information of each rule.
@@ -206,6 +207,7 @@ CodePathSegment.markUsed = function(segment) {
     segment.internal.used = true;
 
     var i;
+
     if (segment.reachable) {
         for (i = 0; i < segment.allPrevSegments.length; ++i) {
             var prevSegment = segment.allPrevSegments[i];
