@@ -1,5 +1,29 @@
 "*":
-  core: {}
+  "atom-material-ui":
+    colors:
+      abaseColor:
+        red: 33
+        green: 150
+        blue: 243
+        alpha: 1
+      genAccent: true
+      predefinedColor: "Blue"
+    fonts:
+      fontSize: 15
+    tabs:
+      compactTabs: true
+      tintedTabBar: true
+    treeView:
+      blendTabs: true
+      compactList: true
+    ui:
+      panelContrast: true
+      panelShadows: true
+  core:
+    themes: [
+      "atom-material-ui"
+      "atom-material-syntax-dark"
+    ]
   editor:
     invisibles: {}
     showInvisibles: true
